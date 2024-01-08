@@ -11,6 +11,13 @@ return {
             },
         })
 
-        vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
+        local autoformat_augroup = vim.api.nvim_create_augroup("AutoFormatSettings", { clear = true })
+        vim.api.nvim_create_autocmd("BufWritePre", {
+            pattern = { "*" },
+            group = autoformat_augroup,
+            callback = function()
+                vim.lsp.buf.format()
+            end,
+        })
     end,
 }
