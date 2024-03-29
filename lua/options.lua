@@ -12,11 +12,11 @@ vim.cmd("set cursorline")
 
 vim.g.mapleader = " "
 
--- Move active window
-vim.keymap.set("n", "<C-h>", "<C-w>h", {})
-vim.keymap.set("n", "<C-j>", "<C-w>j", {})
-vim.keymap.set("n", "<C-k>", "<C-w>k", {})
-vim.keymap.set("n", "<C-l>", "<C-w>l", {})
+-- Move active window (w/ tmux)
+vim.keymap.set("n", "<C-k>", ":wincmd k<CR>", {})
+vim.keymap.set("n", "<C-j>", ":wincmd j<CR>", {})
+vim.keymap.set("n", "<C-h>", ":wincmd h<CR>", {})
+vim.keymap.set("n", "<C-l>", ":wincmd l<CR>", {})
 
 -- Split window
 vim.keymap.set("n", "ss", "<cmd>split<cr>", {})
